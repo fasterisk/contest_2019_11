@@ -1,2 +1,2 @@
-# CodingContestBase
-C++ Project which can be used for coding contests
+# contest_2019_11
+C++ Project for the November 2019 contest
