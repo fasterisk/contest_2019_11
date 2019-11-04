@@ -11,8 +11,81 @@
 
 using namespace std;
 
+////////////////////////////////////////////////////////////////////
+///				Operators
+////////////////////////////////////////////////////////////////////
 
+template<typename T1, typename T2>
+inline ofstream& operator << (ofstream& output, const pair<T1, T2>& p)
+{
+	output << p.first << " " << p.second;
 
+	return output;
+}
+
+template<typename T1, typename T2>
+inline ifstream& operator >> (ifstream& input, pair<T1, T2>& p)
+{
+	input >> p.first;
+	input >> p.second;
+
+	return input;
+}
+
+template<typename T>
+inline ofstream& operator <<(ofstream& output, const vector<T>& rVector)
+{
+	bool bFirst = true;
+	for (auto& item : rVector)
+	{
+		if (bFirst)
+			bFirst = false;
+		else
+			output << " ";
+
+		output << item;
+	}
+
+	return output;
+}
+
+template<typename T>
+inline ofstream& operator <<(ofstream& output, const set<T>& rSet)
+{
+	bool bFirst = true;
+	for (auto& item : rSet)
+	{
+		if (bFirst)
+			bFirst = false;
+		else
+			output << " ";
+
+		output << item;
+	}
+
+	return output;
+}
+
+template<typename T1, typename T2>
+inline ofstream& operator <<(ofstream& output, const map<T1, T2>& rMap)
+{
+	bool bFirst = true;
+	for (auto& iter : rMap)
+	{
+		if (bFirst)
+			bFirst = false;
+		else
+			output << " ";
+
+		output << iter;
+	}
+
+	return output;
+}
+
+////////////////////////////////////////////////////////////////////
+///				io namespace
+////////////////////////////////////////////////////////////////////
 namespace io
 {
 	template<typename T>
@@ -66,75 +139,4 @@ namespace io
 	}
 };
 
-////////////////////////////////////////////////////////////////////
-///				Operators
-////////////////////////////////////////////////////////////////////
-
-template<typename T1, typename T2>
-inline ofstream& operator << (ofstream & output, const pair<T1, T2>& p)
-{
-	output << p.first << " " << p.second;
-
-	return output;
-}
-
-template<typename T1, typename T2>
-inline ifstream& operator >> (ifstream & input, pair<T1, T2>& p)
-{
-	input >> p.first;
-	input >> p.second;
-
-	return input;
-}
-
-template<typename T>
-inline ofstream &operator <<(ofstream & output, const vector<T> & rVector)
-{
-	bool bFirst = true;
-	for (auto & item : rVector)
-	{
-		if (bFirst)
-			bFirst = false;
-		else
-			output << " ";
-
-		output << item;
-	}
-
-	return output;
-}
-
-template<typename T>
-inline ofstream &operator <<(ofstream & output, const set<T> & rSet)
-{
-	bool bFirst = true;
-	for (auto & item : rSet)
-	{
-		if (bFirst)
-			bFirst = false;
-		else
-			output << " ";
-
-		output << item;
-	}
-
-	return output;
-}
-
-template<typename T1, typename T2>
-inline ofstream &operator <<(ofstream & output, const map<T1, T2> & rMap)
-{
-	bool bFirst = true;
-	for (auto & iter : rMap)
-	{
-		if (bFirst)
-			bFirst = false;
-		else
-			output << " ";
-
-		output << iter;
-	}
-
-	return output;
-}
 

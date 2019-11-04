@@ -29,6 +29,15 @@ void Contest::Run(std::ifstream & input, std::ofstream & output)
 	InputObject i1;
 	input >> i1;
 
+	vector<InputObject> vInputObjects;
+	io::readVector(input, 10, vInputObjects);
+
+	// needed when parsing strings
+	io::goToNextLine(input);
+
+	VI vectorofints;
+	io::readVector(input, 10, vectorofints);
+
 	VII vectorofintpairs;
 	io::readVector(input, 5, vectorofintpairs);
 
