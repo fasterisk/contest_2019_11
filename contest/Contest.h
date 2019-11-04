@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CommonIncludes.h"
+#include "CodingContestBase.h"
 
 class Contest
 {

@@ -5,7 +5,7 @@ int main()
 {
 	std::string FOLDER_PREFIX = "level";
 
-	unsigned int LEVEL_NUMBER = 5;
+	unsigned int LEVEL_NUMBER = 1;
 	unsigned int NUM_TEST_LEVELS = 5;
 
 	for (unsigned int nLevelFile = 1; nLevelFile <= NUM_TEST_LEVELS; ++nLevelFile)
